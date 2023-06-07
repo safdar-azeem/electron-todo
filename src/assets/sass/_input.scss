@@ -1,0 +1,44 @@
+.input-group {
+	@apply relative rounded min-h-D h-D border border-gray-900 text-gray-800 flex items-center;
+	box-shadow: 1.5px 3.5px 1px var(--gray-900);
+	transition: all 0.1s ease-in-out;
+	&.focus {
+		box-shadow: 1px 1px 1px var(--gray-900);
+	}
+
+	&:disabled {
+		@apply bg-gray-200 cursor-not-allowed;
+	}
+}
+
+.input {
+	@apply flex h-full px-3 text w-full bg-transparent text-inherit;
+
+	&::placeholder {
+		@apply text-gray-600;
+	}
+
+	&:focus {
+		@apply outline-0;
+	}
+
+	&.sm {
+		@apply h-sm min-h-sm -text-fs-1;
+	}
+
+	&.md {
+		@apply h-md min-h-md;
+	}
+
+	&.lg {
+		@apply h-lg min-h-lg text-fs-1;
+	}
+}
+
+.label {
+	@apply font-medium -text-fs-1 text-gray-800 mb-2 capitalize inline-block;
+}
+
+.slot {
+	@apply h-full flex items-center justify-center overflow-hidden rounded-tr rounded-br;
+}

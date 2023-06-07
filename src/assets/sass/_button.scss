@@ -1,0 +1,152 @@
+.btn {
+   @apply bg-gray-200  min-h-D h-D px-4 rounded flex gap-x-3 justify-center items-center text text-gray-800 font-medium cursor-pointer;
+   position: relative;
+   overflow: hidden;
+   transition: all 0.4s ease-out;
+   svg {
+      @apply text-fs-2;
+   }
+
+   &:hover {
+      @apply bg-gray-300;
+   }
+
+   &:focus {
+      @apply outline-gray-300;
+   }
+
+   &:before {
+      @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-0 h-0 bg-white opacity-[0.25];
+      content: '';
+      border-radius: inherit;
+      transition: transform 0.4s;
+   }
+   &:active:before {
+      width: 100%;
+      height: 100%;
+   }
+
+   &:active {
+      transform: scale(0.9);
+   }
+
+   // variants
+   &.transparent {
+      @apply bg-transparent text-gray-700;
+      &:focus {
+         @apply outline-gray-300;
+      }
+      &:hover {
+         @apply bg-gray-100;
+      }
+   }
+   &.outline {
+      @apply bg-transparent border border-gray-300 outline-0 text-gray-800;
+      &:focus {
+         @apply outline-gray-300;
+      }
+      &:hover {
+         @apply bg-gray-100 border border-gray-400;
+      }
+   }
+   &.primary {
+      @apply bg-primary text-primary-fg;
+      &:focus {
+         @apply outline-primary-dark;
+      }
+      &:hover {
+         @apply bg-primary-dark;
+      }
+      .icon {
+         @apply text-primary-fg;
+      }
+      .loader {
+         --outer-border-color: theme('colors.gray.400');
+         --inner-border-color: theme('colors.gray.600');
+      }
+   }
+   &.disabled,
+   &:disabled {
+      @apply cursor-not-allowed opacity-50;
+   }
+
+   // sizes
+   &.xsm {
+      @apply min-h-xsm h-xsm -text-fs-2;
+      svg {
+         @apply -text-fs-2;
+      }
+   }
+   &.sm {
+      @apply min-h-sm h-sm  -text-fs-2;
+      svg {
+         @apply -text-fs-2;
+      }
+   }
+   &.md {
+      @apply min-h-md h-md;
+      svg {
+         @apply text-fs-1;
+      }
+   }
+   &.lg {
+      @apply min-h-lg h-lg px-6 sm:text-fs-1;
+      svg {
+         @apply text-fs-4;
+      }
+   }
+
+   &.xl {
+      @apply min-h-xl h-xl px-6 sm:text-fs-2;
+      svg {
+         @apply text-fs-5;
+      }
+   }
+
+   &-icon {
+      &.loading {
+         @apply px-0;
+         * {
+            @apply hidden;
+         }
+      }
+      @apply min-w-[2.875em] w-[2.706em] h-[2.706em] px-0 gap-0;
+      svg {
+         @apply text-fs-3;
+      }
+      &.xsm {
+         @apply min-w-xsm w-xsm h-xsm p-0;
+         svg {
+            @apply -text-fs-2;
+         }
+      }
+      &.sm {
+         @apply min-w-sm w-sm h-sm p-0;
+         svg {
+            @apply text-fs-1;
+         }
+      }
+      &.md {
+         @apply min-w-md w-md h-md p-0;
+         svg {
+            @apply text-fs-3;
+         }
+      }
+      &.lg {
+         @apply min-w-lg w-lg h-lg p-0;
+         svg {
+            @apply text-fs-3 sm:text-fs-4;
+         }
+      }
+      &.xl {
+         @apply min-w-xl w-xl h-xl p-0;
+         svg {
+            @apply text-fs-3 sm:text-fs-4;
+         }
+      }
+   }
+}
+
+.button-group {
+   @apply flex gap-x-3 gap-y-2;
+}
